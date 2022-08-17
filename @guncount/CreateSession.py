@@ -1,4 +1,3 @@
-
 from requests_oauthlib import OAuth1Session
 
 consumer_key = "IJjKb8eBLssG5WyfaiqqfQzL7"
