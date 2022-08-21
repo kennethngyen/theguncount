@@ -2,10 +2,9 @@ import Bs4Scraper
 import globalVars
 import SendWebhook
 import CreateSession
+import ChangeUser
 import re
-
 import time
-
 
 # if tweet fails, refresh token and run sendwebhook again
 
@@ -17,8 +16,6 @@ def pullData():
 
 
 def processData(myList):
-    globalVars.twitterSession = CreateSession.main4()
-
     for row in myList:
         date = row.find_all('td')[1].text
         state = row.find_all('td')[2].text
@@ -38,6 +35,7 @@ def processData(myList):
         SendWebhook.main3(incidentArray, globalVars.twitterSession)
         print("Sent Tweet:", date, city, "| Total_Casualties =", totalCasualties)
 
+        ChangeUser.main5(globalVars.twitterSession)
         time.sleep(1)
 
     print("success")
@@ -45,6 +43,7 @@ def processData(myList):
 
 def main():
     delay = int(input("What is the time delay in seconds?: "))
+    globalVars.twitterSession = CreateSession.main4()
     while True:
         pullData()
 

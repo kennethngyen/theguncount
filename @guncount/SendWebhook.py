@@ -48,4 +48,6 @@ def main3(incidentInfo, twitterSession):
     print(json.dumps(json_response, indent=4, sort_keys=True))
     print(json.dumps(json_response, indent=4, sort_keys=True))
 
+
+
     return
