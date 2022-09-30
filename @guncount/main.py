@@ -5,6 +5,8 @@ import CreateSession
 import ChangeUser
 import re
 import time
+import updateVar
+
 
 # if tweet fails, refresh token and run sendwebhook again
 
@@ -38,6 +40,7 @@ def processData(myList):
         ChangeUser.main5(globalVars.twitterSession)
         time.sleep(1)
 
+    updateVar.main7() #should be moved to before; otherwise variable might be added to list before it is tweeted
     print("success")
 
 

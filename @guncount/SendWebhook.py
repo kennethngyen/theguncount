@@ -46,7 +46,6 @@ def main3(incidentInfo, twitterSession):
     # Saving the response as JSON
     json_response = response.json()
     print(json.dumps(json_response, indent=4, sort_keys=True))
-    print(json.dumps(json_response, indent=4, sort_keys=True))
 
 
 
